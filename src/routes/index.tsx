@@ -58,6 +58,7 @@ function Index() {
           <nav className="hidden md:flex items-center gap-10 text-sm tracking-wider uppercase text-muted-foreground">
             <a href="#servicos" className="hover:text-foreground transition">Serviços</a>
             <a href="#sobre" className="hover:text-foreground transition">Sobre</a>
+            <a href="#depoimentos" className="hover:text-foreground transition">Depoimentos</a>
             <a href="#contato" className="hover:text-foreground transition">Contato</a>
           </nav>
           <a href={whatsapp} target="_blank" rel="noreferrer" className="text-xs tracking-luxury uppercase border border-foreground/30 px-4 py-2 hover:bg-foreground hover:text-background transition">
