@@ -47,26 +47,73 @@ const testimonials = [
 
 function Index() {
   const whatsapp = "https://wa.me/5548999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta";
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "#servicos", label: "Serviços" },
+    { href: "#sobre", label: "Sobre" },
+    { href: "#depoimentos", label: "Depoimentos" },
+    { href: "#contato", label: "Contato" },
+  ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
-      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/60">
+      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/60">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="#top" className="font-display text-lg tracking-wide">
+          <a href="#top" className="font-display text-lg tracking-wide" onClick={() => setMenuOpen(false)}>
             <span className="text-gold-gradient">M</span> Schulter
           </a>
           <nav className="hidden md:flex items-center gap-10 text-sm tracking-wider uppercase text-muted-foreground">
-            <a href="#servicos" className="hover:text-foreground transition">Serviços</a>
-            <a href="#sobre" className="hover:text-foreground transition">Sobre</a>
-            <a href="#depoimentos" className="hover:text-foreground transition">Depoimentos</a>
-            <a href="#contato" className="hover:text-foreground transition">Contato</a>
+            {navLinks.map((l) => (
+              <a key={l.href} href={l.href} className="hover:text-foreground transition">{l.label}</a>
+            ))}
           </nav>
-          <a href={whatsapp} target="_blank" rel="noreferrer" className="text-xs tracking-luxury uppercase border border-foreground/30 px-4 py-2 hover:bg-foreground hover:text-background transition">
-            Agendar
-          </a>
+          <div className="flex items-center gap-3">
+            <a href={whatsapp} target="_blank" rel="noreferrer" className="hidden sm:inline-flex text-xs tracking-luxury uppercase border border-foreground/30 px-4 py-2 hover:bg-foreground hover:text-background transition">
+              Agendar
+            </a>
+            <button
+              type="button"
+              aria-label="Abrir menu"
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
+              className="md:hidden w-10 h-10 inline-flex items-center justify-center border border-foreground/30 text-foreground"
+            >
+              {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+        </div>
+        {/* Mobile menu */}
+        <div
+          className={`md:hidden overflow-hidden border-t border-border/60 bg-background/95 backdrop-blur-md transition-[max-height] duration-300 ease-out ${
+            menuOpen ? "max-h-96" : "max-h-0"
+          }`}
+        >
+          <nav className="flex flex-col px-6 py-4 gap-1 text-sm tracking-wider uppercase text-muted-foreground">
+            {navLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setMenuOpen(false)}
+                className="py-3 border-b border-border/50 hover:text-foreground transition"
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href={whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="mt-3 inline-flex items-center justify-center gap-2 bg-gold-gradient text-primary-foreground px-4 py-3 tracking-luxury uppercase text-xs"
+            >
+              Agendar Consulta <ArrowRight className="w-4 h-4" />
+            </a>
+          </nav>
         </div>
       </header>
+
 
       {/* HERO */}
       <section id="top" className="relative min-h-screen flex items-center justify-center overflow-hidden">
