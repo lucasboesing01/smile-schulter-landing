@@ -46,7 +46,7 @@ const testimonials = [
 ];
 
 function Index() {
-  const whatsapp = "https://wa.me/5548999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta";
+  const whatsapp = "https://wa.me/5548988753723?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta";
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
