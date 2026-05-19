@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Sparkles, Stethoscope, Smile, ShieldPlus, MapPin, Phone, Mail, Instagram, Facebook, Clock, ArrowRight } from "lucide-react";
+import { Sparkles, Stethoscope, Smile, ShieldPlus, MapPin, Phone, Mail, Instagram, Facebook, Clock, ArrowRight, Quote } from "lucide-react";
 import logo from "@/assets/logo-myckaela.png";
 import marble from "@/assets/marble-hero.jpg";
 import portrait from "@/assets/dentist-portrait.jpg";
