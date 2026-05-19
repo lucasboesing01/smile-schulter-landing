@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Sparkles, Stethoscope, Smile, ShieldPlus, MapPin, Phone, Mail, Instagram, Facebook, Clock, ArrowRight } from "lucide-react";
+import { Sparkles, Stethoscope, Smile, ShieldPlus, MapPin, Phone, Mail, Instagram, Facebook, Clock, ArrowRight, Quote } from "lucide-react";
 import logo from "@/assets/logo-myckaela.png";
 import marble from "@/assets/marble-hero.jpg";
 import portrait from "@/assets/dentist-portrait.jpg";
@@ -29,6 +29,21 @@ const services = [
   { icon: Sparkles, title: "Atendimento Premium", desc: "Ambiente acolhedor, tecnologia moderna e planos personalizados para cada paciente." },
 ];
 
+const testimonials = [
+  {
+    name: "Thaís",
+    text: "Sou muito fã do seu trabalho. Obrigada pela paciência de sempre e pelo seu excelente trabalho — amei demais!",
+  },
+  {
+    name: "Evely",
+    text: "Só as suas mãos para me devolver a naturalidade e me deixar novamente de bem com o espelho! Sou sua fã número 1 e admiradora de todo o seu empenho em buscar sempre os melhores cursos.",
+  },
+  {
+    name: "Gabi",
+    text: "Só me arrependi de não ter feito antes. Não consigo explicar com palavras o quanto esse procedimento melhorou minha autoestima. Recomendo! Nunca é um gasto — é investimento em se sentir bem e gostar do que vê no espelho.",
+  },
+];
+
 function Index() {
   const whatsapp = "https://wa.me/5548999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta";
 
@@ -43,6 +58,7 @@ function Index() {
           <nav className="hidden md:flex items-center gap-10 text-sm tracking-wider uppercase text-muted-foreground">
             <a href="#servicos" className="hover:text-foreground transition">Serviços</a>
             <a href="#sobre" className="hover:text-foreground transition">Sobre</a>
+            <a href="#depoimentos" className="hover:text-foreground transition">Depoimentos</a>
             <a href="#contato" className="hover:text-foreground transition">Contato</a>
           </nav>
           <a href={whatsapp} target="_blank" rel="noreferrer" className="text-xs tracking-luxury uppercase border border-foreground/30 px-4 py-2 hover:bg-foreground hover:text-background transition">
@@ -134,7 +150,33 @@ function Index() {
       </section>
 
       {/* CONTATO */}
-      <section id="contato" className="py-28 px-6">
+      {/* DEPOIMENTOS */}
+      <section id="depoimentos" className="py-28 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-20">
+            <p className="text-xs tracking-luxury uppercase text-gold-gradient mb-4">Depoimentos</p>
+            <h2 className="text-4xl md:text-5xl italic font-light">O carinho de quem confia</h2>
+            <div className="mx-auto mt-6 h-px w-16 bg-gold-gradient" />
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((t) => (
+              <figure key={t.name} className="relative bg-card border border-border/60 p-10 flex flex-col">
+                <Quote className="w-8 h-8 text-primary/70 mb-6" strokeWidth={1.2} />
+                <blockquote className="text-foreground/85 leading-relaxed italic font-light flex-1">
+                  “{t.text}”
+                </blockquote>
+                <figcaption className="mt-8 pt-6 border-t border-border/60">
+                  <div className="font-display text-lg text-gold-gradient">{t.name}</div>
+                  <div className="text-[10px] tracking-luxury uppercase text-muted-foreground mt-1">Paciente</div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONTATO */}
+      <section id="contato" className="py-28 px-6 bg-secondary/40">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-xs tracking-luxury uppercase text-gold-gradient mb-4">Contato</p>
