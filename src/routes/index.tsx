@@ -150,7 +150,33 @@ function Index() {
       </section>
 
       {/* CONTATO */}
-      <section id="contato" className="py-28 px-6">
+      {/* DEPOIMENTOS */}
+      <section id="depoimentos" className="py-28 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-20">
+            <p className="text-xs tracking-luxury uppercase text-gold-gradient mb-4">Depoimentos</p>
+            <h2 className="text-4xl md:text-5xl italic font-light">O carinho de quem confia</h2>
+            <div className="mx-auto mt-6 h-px w-16 bg-gold-gradient" />
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((t) => (
+              <figure key={t.name} className="relative bg-card border border-border/60 p-10 flex flex-col">
+                <Quote className="w-8 h-8 text-primary/70 mb-6" strokeWidth={1.2} />
+                <blockquote className="text-foreground/85 leading-relaxed italic font-light flex-1">
+                  “{t.text}”
+                </blockquote>
+                <figcaption className="mt-8 pt-6 border-t border-border/60">
+                  <div className="font-display text-lg text-gold-gradient">{t.name}</div>
+                  <div className="text-[10px] tracking-luxury uppercase text-muted-foreground mt-1">Paciente</div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONTATO */}
+      <section id="contato" className="py-28 px-6 bg-secondary/40">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-xs tracking-luxury uppercase text-gold-gradient mb-4">Contato</p>
