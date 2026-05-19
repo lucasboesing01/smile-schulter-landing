@@ -29,6 +29,21 @@ const services = [
   { icon: Sparkles, title: "Atendimento Premium", desc: "Ambiente acolhedor, tecnologia moderna e planos personalizados para cada paciente." },
 ];
 
+const testimonials = [
+  {
+    name: "Thaís",
+    text: "Sou muito fã do seu trabalho. Obrigada pela paciência de sempre e pelo seu excelente trabalho — amei demais!",
+  },
+  {
+    name: "Evely",
+    text: "Só as suas mãos para me devolver a naturalidade e me deixar novamente de bem com o espelho! Sou sua fã número 1 e admiradora de todo o seu empenho em buscar sempre os melhores cursos.",
+  },
+  {
+    name: "Gabi",
+    text: "Só me arrependi de não ter feito antes. Não consigo explicar com palavras o quanto esse procedimento melhorou minha autoestima. Recomendo! Nunca é um gasto — é investimento em se sentir bem e gostar do que vê no espelho.",
+  },
+];
+
 function Index() {
   const whatsapp = "https://wa.me/5548999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta";
 
