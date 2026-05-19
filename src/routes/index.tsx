@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
 
 const services = [
   { icon: Smile, title: "Odontologia Estética", desc: "Clareamento, lentes de contato e harmonização do sorriso com acabamento natural." },
-  { icon: Stethoscope, title: "Clínica Geral", desc: "Consultas, profilaxia, restaurações e cuidado preventivo para toda a família." },
+  { icon: Stethoscope, title: "Clínica Geral", desc: "Consultas, profilaxia, restaurações e cuidado preventivo para toda a familia." },
   { icon: ShieldPlus, title: "Cirurgia Dentária", desc: "Extrações, sisos e procedimentos cirúrgicos com técnica minimamente invasiva." },
   { icon: Sparkles, title: "Atendimento Premium", desc: "Ambiente acolhedor, tecnologia moderna e planos personalizados para cada paciente." },
 ];
